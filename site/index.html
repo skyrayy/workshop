@@ -1,20 +1,120 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Наш магазин — старт</title>
-  <link rel="stylesheet" href="./styles.css">
-  <script src="./app.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Небольшой книжный магазин">
+    <title>Книжная полка — магазин книг</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js" defer></script>
 </head>
 <body>
-  <main>
-    <img src="./assets/shop.svg" width="80" height="80" alt="Вывеска магазина">
-    <p class="eyebrow">AI-воркшоп · ИТМО</p>
-    <h1>Здесь будет ваш магазин</h1>
-    <p>Придумайте тему, добавьте каталог и соберите первую корзину.</p>
-    <p id="status" role="status">JavaScript ещё не запущен.</p>
-    <a href="https://github.com/itmo-workshop-09-11-2026/workshop-guide/blob/main/docs/task.md">Открыть задание</a>
-  </main>
+    <header class="site-header">
+        <a class="logo" href="#" aria-label="Книжная полка — главная">
+            <span class="logo-icon" aria-hidden="true">▤</span>
+            <span>Книжная полка</span>
+        </a>
+        <a class="header-link" href="#cart-section">Моя корзина ↓</a>
+    </header>
+
+    <main class="page">
+        <section class="hero">
+            <p class="eyebrow">МАЛЕНЬКИЙ МАГАЗИН БОЛЬШИХ ИСТОРИЙ</p>
+            <h1>Найди свою<br><span>следующую книгу</span></h1>
+            <p class="hero-description">Три истории, которые могут стать твоими любимыми.</p>
+            <a class="hero-button" href="#products">Выбрать книгу</a>
+        </section>
+
+        <section class="catalog" aria-labelledby="catalog-title">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">НАША ПОДБОРКА</p>
+                    <h2 id="catalog-title">Книги на полке</h2>
+                </div>
+                <span class="book-count">3 книги</span>
+            </div>
+
+            <section id="products" class="products-grid" aria-label="Каталог товаров">
+                <article class="product-card" data-product-id="1" data-name="Маленький принц" data-price="450">
+                    <div class="book-cover cover-one" aria-hidden="true">
+                        <span class="cover-kicker">АНТУАН ДЕ СЕНТ-ЭКЗЮПЕРИ</span>
+                        <span class="cover-art">✦</span>
+                        <span class="cover-title">Маленький<br>принц</span>
+                        <span class="cover-bottom">СКАЗКА ДЛЯ ВСЕХ</span>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">КЛАССИКА</p>
+                        <h3>Маленький принц</h3>
+                        <p class="product-description">Трогательная история о дружбе, любви и самом важном.</p>
+                        <div class="product-bottom">
+                            <span class="price">450 ₽</span>
+                            <button class="add-to-cart" type="button">Добавить</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-product-id="2" data-name="Гарри Поттер и философский камень" data-price="690">
+                    <div class="book-cover cover-two" aria-hidden="true">
+                        <span class="cover-kicker">ДЖ. К. РОУЛИНГ</span>
+                        <span class="cover-art">✧</span>
+                        <span class="cover-title">Гарри Поттер<br><small>и философский камень</small></span>
+                        <span class="cover-bottom">МИР МАГИИ ЖДЁТ</span>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">ФЭНТЕЗИ</p>
+                        <h3>Гарри Поттер и философский камень</h3>
+                        <p class="product-description">Первое приключение в удивительном мире волшебства.</p>
+                        <div class="product-bottom">
+                            <span class="price">690 ₽</span>
+                            <button class="add-to-cart" type="button">Добавить</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-product-id="3" data-name="Цветы для Элджернона" data-price="520">
+                    <div class="book-cover cover-three" aria-hidden="true">
+                        <span class="cover-kicker">ДЭНИЕЛ КИЗ</span>
+                        <span class="cover-art">✿</span>
+                        <span class="cover-title">Цветы для<br>Элджернона</span>
+                        <span class="cover-bottom">РОМАН</span>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">БЕСТСЕЛЛЕР</p>
+                        <h3>Цветы для Элджернона</h3>
+                        <p class="product-description">История, которая заставляет задуматься и чувствовать.</p>
+                        <div class="product-bottom">
+                            <span class="price">520 ₽</span>
+                            <button class="add-to-cart" type="button">Добавить</button>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </section>
+
+        <section id="cart-section" class="cart-section" aria-labelledby="cart-title">
+            <div class="cart-heading">
+                <div>
+                    <p class="eyebrow">ВАШ ВЫБОР</p>
+                    <h2 id="cart-title">Корзина</h2>
+                </div>
+                <span class="cart-icon" aria-hidden="true">🛍</span>
+            </div>
+            <div class="cart-content">
+                <ul id="cart" aria-live="polite">
+                    <li class="cart-empty">Пока здесь пусто. Добавьте книгу с полки!</li>
+                </ul>
+                <div class="cart-total">
+                    <span>Итого</span>
+                    <strong id="total">0 ₽</strong>
+                </div>
+            </div>
+            <p class="cart-note">Состав корзины и итоговая сумма обновятся после подключения логики корзины.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <span>Книжная полка</span>
+        <span>Истории, которые остаются с нами.</span>
+    </footer>
 </body>
 </html>
